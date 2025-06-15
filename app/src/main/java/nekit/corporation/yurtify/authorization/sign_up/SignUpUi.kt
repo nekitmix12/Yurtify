@@ -19,6 +19,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.imageResource
@@ -34,6 +35,8 @@ import nekit.corporation.yurtify.ui.theme.Brown300
 import nekit.corporation.yurtify.ui.theme.Font
 import nekit.corporation.yurtify.ui.theme.Gray
 import nekit.corporation.yurtify.ui.theme.Typography
+import nekit.corporation.yurtify.ui_kit.ConfirmButton
+import nekit.corporation.yurtify.ui_kit.EditForm
 
 @Composable
 fun SignUpUi(component: SignUpComponent) {
@@ -57,68 +60,86 @@ fun SignUpUi(component: SignUpComponent) {
                 .padding(horizontal = 28.dp),
             contentScale = ContentScale.Crop
         )
-        LazyColumn(Modifier.padding(vertical = 32.dp).weight(1f)) {
+        LazyColumn(
+            Modifier
+                .padding(vertical = 32.dp)
+                .weight(1f)
+        ) {
             item {
                 EditForm(
+                    state.surname,
                     stringResource(R.string.surname),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 24.dp),
-                    component::onSurnameEnter
+                    component::onSurnameEnter,
+                    state.surnameError
                 )
             }
             item {
                 EditForm(
+                    state.name,
                     stringResource(R.string.name),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 24.dp),
-                    component::onNameEnter
+                    component::onNameEnter,
+                    state.nameError
                 )
             }
             item {
                 EditForm(
+                    state.lastName,
                     stringResource(R.string.last_name),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 24.dp),
-                    component::onLastNameEnter
+                    component::onLastNameEnter,
+                    state.lastNameError
                 )
             }
             item {
                 EditForm(
+                    state.phoneNumber,
                     stringResource(R.string.phone_number),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 24.dp),
-                    component::onPhoneNumberEnter
+                    component::onPhoneNumberEnter,
+                    state.phoneNumberError
                 )
             }
             item {
                 EditForm(
+                    state.email,
                     stringResource(R.string.email),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 24.dp),
-                    component::onEmailEnter
+                    component::onEmailEnter,
+                    state.emailError
                 )
             }
             item {
                 EditForm(
+                    state.password,
                     stringResource(R.string.password),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 24.dp),
-                    component::onPasswordEnter
+                    component::onPasswordEnter,
+                    state.passwordError
                 )
             }
             item {
                 EditForm(
+                    state.repeatPassword,
                     stringResource(R.string.repeat_password),
                     Modifier
                         .padding(horizontal = 26.dp)
                         .padding(bottom = 32.dp),
-                    component::onRepeatPasswordEnter
+                    component::onRepeatPasswordEnter,
+                    state.repeatPasswordError
                 )
             }
 
@@ -134,55 +155,16 @@ fun SignUpUi(component: SignUpComponent) {
     }
 }
 
-@Composable
-fun EditForm(
-    text: String, @SuppressLint("ModifierParameter") modifier: Modifier, onChange: (String) -> Unit
-) {
 
-    OutlinedTextField(
-        value = text,
-        onValueChange = onChange,
-        shape = RoundedCornerShape(10.dp),
-        modifier = modifier.fillMaxWidth(),
-        placeholder = { Text("Фамилия") },
-        colors = OutlinedTextFieldDefaults.colors(
-            unfocusedContainerColor = Beige,
-            focusedContainerColor = Beige.copy(alpha = 0.9f),
-            unfocusedBorderColor = Gray,
-            focusedBorderColor = Gray,
-            focusedTextColor = Font.copy(alpha = 0.4f),
-            unfocusedTextColor = Font.copy(alpha = 0.3f),
-            focusedPlaceholderColor = Font.copy(alpha = 0.4f),
-            unfocusedPlaceholderColor = Font.copy(alpha = 0.3f),
-        ),
-        textStyle = Typography.bodySmall
-    )
-}
 
-@Composable
-fun ConfirmButton(onClick: () -> Unit, text: String, modifier: Modifier) {
-    Button(
-        onClick = onClick,
-        modifier = modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors().copy(
-            containerColor = Brown300
-        ),
-        elevation = ButtonDefaults.elevatedButtonElevation(
-            defaultElevation = 5.dp,
-        ),
-        shape = RoundedCornerShape(10.dp),
-    ) {
-        Text(text, Modifier.padding(vertical = 10.dp), style = Typography.bodyMedium)
-    }
-}
 
 class FakeSignUpComponent : SignUpComponent {
     override val state = MutableStateFlow(
         SignUpState(
-            surname = "",
+            surname = "Valera",
             name = "",
             lastName = "",
-            phoneNumber = "",
+            phoneNumber = "123",
             email = "",
             password = "",
             repeatPassword = "",
@@ -190,7 +172,7 @@ class FakeSignUpComponent : SignUpComponent {
             surnameError = null,
             nameError = null,
             lastNameError = null,
-            phoneNumberError = null,
+            phoneNumberError = "Короткий номер",
             emailError = null,
             passwordError = null,
             repeatPasswordError = null,

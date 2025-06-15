@@ -21,7 +21,7 @@
     <!--common-->
     <string name="phone_number">Номер телефона</string>
     <string name="password">Пароль</string>
-    <string name="sing_in_v">Войти</string>
+    <string name="sign_in_v">Войти</string>
     <string name="sign_up_v">Зарегистрироваться</string>
 
 
