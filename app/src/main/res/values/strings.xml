@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Yurtify</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="slogan">Аутентичное жильё \nв самом сердце природы</string>
+    <string name="signIn">Зарегестрироваться</string>
+    <string name="signUp">Войти</string>
+    <string name="continue_as_guest">Продолжить как гость</string>
+    <string name="or">или</string>
+
+</resources>
