@@ -93,7 +93,7 @@ fun AuthorizationUi(component: AuthorizationMainComponent) {
             contentPadding = PaddingValues(vertical = 20.dp)
         ) {
             Text(
-                stringResource(R.string.signIn), style = Typography.bodyMedium
+                stringResource(R.string.sign_in), style = Typography.bodyMedium
             )
         }
         Button(
@@ -111,7 +111,7 @@ fun AuthorizationUi(component: AuthorizationMainComponent) {
             contentPadding = PaddingValues(vertical = 20.dp)
         ) {
             Text(
-                stringResource(R.string.signUp), style = Typography.bodyMedium
+                stringResource(R.string.sign_up), style = Typography.bodyMedium
             )
         }
 

@@ -1,10 +1,28 @@
 <resources>
     <string name="app_name">Yurtify</string>
+
+    <!--main authorization-->
     <string name="welcome">Добро пожаловать!</string>
     <string name="slogan">Аутентичное жильё \nв самом сердце природы</string>
-    <string name="signIn">Зарегестрироваться</string>
-    <string name="signUp">Войти</string>
     <string name="continue_as_guest">Продолжить как гость</string>
     <string name="or">или</string>
+
+    <!--sign in-->
+    <string name="sign_in">Вход в аккаунт</string>
+
+    <!--sign up-->
+    <string name="sign_up">Регистрация</string>
+    <string name="surname">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="last_name">Отчество</string>
+    <string name="email">Электронная почта</string>
+    <string name="repeat_password">Повторный ввод пароля*</string>
+
+    <!--common-->
+    <string name="phone_number">Номер телефона</string>
+    <string name="password">Пароль</string>
+    <string name="sing_in_v">Войти</string>
+    <string name="sign_up_v">Зарегистрироваться</string>
+
 
 </resources>
