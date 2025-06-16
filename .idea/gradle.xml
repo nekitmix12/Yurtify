@@ -11,6 +11,18 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/auth" />
+            <option value="$PROJECT_DIR$/bottom_nav" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/element" />
+            <option value="$PROJECT_DIR$/list" />
+            <option value="$PROJECT_DIR$/map" />
+            <option value="$PROJECT_DIR$/notification" />
+            <option value="$PROJECT_DIR$/other" />
+            <option value="$PROJECT_DIR$/profile" />
+            <option value="$PROJECT_DIR$/root" />
+            <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

@@ -21,4 +21,16 @@ dependencyResolutionManagement {
 
 rootProject.name = "Yurtify"
 include(":app")
- 
+include(":other")
+include(":auth")
+include(":common")
+include(":list")
+include(":map")
+include(":notification")
+include(":profile")
+include(":element")
+include(":util")
+include(":data")
+include(":bottom_nav")
+include(":root")
+include(":domain")
